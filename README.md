@@ -5,7 +5,7 @@ smallest eigenvalue problem on large sparse matrices. This project is a collabor
 of:
 
 * Giulio Masetti (@106ohm)
-* Gianpaolo Mele
+* Giampaolo Mele
 * Jacopo Notarstefano (@jacquerie)
 
 ## Installation ##
