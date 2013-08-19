@@ -1,0 +1,7 @@
+Ho copiato qui la cartella di silk (dopo aver dato compilato il codice... Potrebbero essere presenti file non necessari) e la cartella con il codice che implementa CSB.
+
+Gli autori del CSB utilizzano il compilatore Intel (che incorpora una versione ottimizzata di silk, io uso quella del MIT) mentre
+io utilizzo gcc. Ho quindi scritto il mio makefile (chiamato makefile-mia-prova) ed ho provato a compilare
+la versione parallela e senza bm del prodotto matrice x vettore. Non ci sono riuscito poiche' mancano alcuni file *.h che
+gli autori ricavano dalla versione commerciale di silk (nel file utility.h ho modificato un #include, specificando la posizione
+di un file scaricato da Internet, ma durante la compilazione e` necessario cilk-sysdep.h che non sono riuscito a trovare)

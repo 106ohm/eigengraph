@@ -1,0 +1,22 @@
+CILK = /usr/local/bin/cilkc
+#Il problema e` che il makefile originale
+#prevede l'utilizzo di cose contenute nella
+#cartella del compilatore Intel, che io non ho...
+#INCADD = -I$(CILK)/include -I$(CILK)/examples/include
+#In particolare: cercando in internet ho trovato silk.h, silk_api.h
+#ma non sono riuscito a trovare cilk-sysdep.h
+#Questi files vengono utilizzati da utility.h
+
+GCCOPT = -O2 -fno-rtti -fno-exceptions
+
+#parspmv_nobm: csb_spmv_test.cpp bicsb.cpp bicsb.h friends.h utility.h
+#	$(CILK) $(GCCOPT) -o parspmv_nobm csb_spmv_test.cpp
+
+parspmvt: csb_spmvt_test.cpp bicsb.cpp bicsb.h utility.h 
+	$(CILK) $(GCCOPT) -o parspmvt csb_spmvt_test.cpp
+
+#parspmv: csb_spmv_test.cpp bicsb.cpp bicsb.h bmcsb.cpp bmcsb.h friends.h utility.h SSEspmv.o
+#	$(CILK) $(GCCOPT) -o parspmv csb_spmv_test.cpp SSEspmv.o
+#
+#SSEspmv.o: SSEspmv.cpp
+#	gcc -c SSEspmv.cpp 
